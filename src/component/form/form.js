@@ -84,7 +84,7 @@ export const CustomForm = () => {
                 <div className="id">
                     <div className="small-box-field">
                         <label className="label">Fecha de nacimiento</label>
-                        <input className="input" type="month" placeholder="DD/MM/AAAA" {...register("birthDate",{
+                        <input className="input" type="text" placeholder="DD/MM/AAAA" {...register("birthDate",{
                             required:{
                                 value:true,
                                 message: "Este campo es obligatorio."                   
@@ -134,7 +134,7 @@ export const CustomForm = () => {
                     </div>
                         <div className="meddium-box-field">
                             <label className="label">Numero telefonicó</label>
-                            <input  className="input"{...register("phone", {
+                            <input maxLength={8} className="input"{...register("phone", {
                                 required:{
                                     value:true,
                                     message:"Este campo es obligatorio."
@@ -148,7 +148,7 @@ export const CustomForm = () => {
                         </div>            
                         <div className="meddium-box-field">
                             <label className="label">Numero telefonico de casa</label>
-                            <input className="input"{...register("phone_house")}/>
+                            <input maxLength={8} className="input"{...register("phone_house")}/>
                         </div>
                 </div>
                 <div className="id" style={errors.mobileCode && { marginTop:'50px'}}>
@@ -196,7 +196,7 @@ export const CustomForm = () => {
                     </div>
                     <div className="small-box-field" style={{ marginTop:"0px"}}>
                         <label className="label">CVC</label>
-                        <input className="input" {...register("cvc",{
+                        <input maxLength={3} className="input" {...register("cvc",{
                               required:{
                                 value:true,
                                 message: "Este campo es obligatorio"
